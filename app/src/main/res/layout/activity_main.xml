@@ -65,14 +65,38 @@
             app:layout_constraintTop_toBottomOf="@+id/tvWeatherStatus" />
 
         <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/_55sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/bg_house" />
 
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/_60sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+>
+            <include
+                layout="@layout/layout_bottom_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
         <include
+            android:id="@+id/bottomNavigation"
             layout="@layout/layout_bottom_nav_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

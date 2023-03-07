@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HalaWeather</string>
+    <string name="weather_now">Now</string>
+    <string name="weather_foreign_dummy">19°</string>
+    <string name="hourly_forecast">Hourly Forecast</string>
+    <string name="weekly_forecast">Weekly Forecast</string>
 </resources>
