@@ -1,9 +1,9 @@
 package com.halacashier.weather.model.fivedayweather;
 
-import com.github.bkhezry.weather.model.common.Clouds;
-import com.github.bkhezry.weather.model.common.WeatherItem;
-import com.github.bkhezry.weather.model.common.Wind;
 import com.google.gson.annotations.SerializedName;
+import com.halacashier.weather.model.common.Clouds;
+import com.halacashier.weather.model.common.WeatherItem;
+import com.halacashier.weather.model.common.Wind;
 
 import java.util.List;
 

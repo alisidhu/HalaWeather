@@ -9,6 +9,9 @@ import android.view.View;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
     BottomSheetBehavior bottomSheetBehavior;
 
@@ -16,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         initViews();
     }
