@@ -1,13 +1,19 @@
-package com.halacashier.weather;
+package com.halacashier.weather.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.halacashier.weather.R;
+import com.halacashier.weather.model.currentweather.Main;
+import com.halacashier.weather.viewmodel.MainVM;
+
+import javax.inject.Inject;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -15,6 +21,8 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class MainActivity extends AppCompatActivity {
     BottomSheetBehavior bottomSheetBehavior;
 
+
+    private MainVM viewModel;
     ConstraintLayout clBottomSheet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         clBottomSheet = findViewById(R.id.clBottomSheet);
         bottomSheetBehavior = BottomSheetBehavior.from(clBottomSheet);
+        viewModel = new ViewModelProvider(this).get(MainVM.class);
         bottomSheetItemDetail();
     }
 
