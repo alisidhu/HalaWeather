@@ -1,7 +1,7 @@
 package com.halacashier.weather.model.daysweather;
 
-import com.github.bkhezry.weather.model.common.WeatherItem;
 import com.google.gson.annotations.SerializedName;
+import com.halacashier.weather.model.common.WeatherItem;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package com.halacashier.weather.model.daysweather;
 
-import com.github.bkhezry.weather.model.common.Coord;
 import com.google.gson.annotations.SerializedName;
+import com.halacashier.weather.model.common.Coord;
 
 
 public class City {

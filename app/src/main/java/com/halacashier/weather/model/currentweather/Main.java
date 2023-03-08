@@ -49,8 +49,8 @@ public class Main {
     this.grndLevel = grndLevel;
   }
 
-  public int getHumidity() {
-    return humidity;
+  public String getHumidity() {
+    return humidity+"°";
   }
 
   public void setHumidity(int humidity) {

@@ -7,54 +7,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginTop="@dimen/_10sdp"
     android:paddingHorizontal="@dimen/_10sdp"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"            app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:layout_constraintBottom_toBottomOf="parent"
     android:paddingBottom="@dimen/_40sdp"
     android:background="@drawable/bg_bottom_sheet">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/ivTopHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_5sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_bottom_sheet_header" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvHourlyForecast"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hourly_forecast"
-        android:alpha=".60"
-        android:textSize="@dimen/_12sdp"
-        android:textStyle="bold"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:padding="@dimen/_10sdp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivTopHeader" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvWeeklyForecast"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/weekly_forecast"
-        android:alpha=".60"
-        android:textSize="@dimen/_12sdp"
-        android:textStyle="bold"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:padding="@dimen/_10sdp"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivTopHeader" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvWeatherList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/bs_item_weather_capsule"
-        app:layout_constraintTop_toBottomOf="@+id/tvHourlyForecast"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
