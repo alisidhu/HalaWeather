@@ -7,52 +7,38 @@ import com.halacashier.weather.model.daysweather.MultipleDaysWeatherResponse;
 import com.halacashier.weather.networking.ApiRequest;
 import com.halacashier.weather.networking.RetrofitRequest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainRepo {
+public class SearchListRepo {
    @Inject
    ApiRequest apiRequest;
-    public MainRepo(){
+    public SearchListRepo(){
         this.apiRequest = RetrofitRequest.provideRetrofitInstance(RetrofitRequest.provideOkHttp());
     }
 
-    public MutableLiveData<CurrentWeatherResponse> getWeather(){
+    public MutableLiveData<CurrentWeatherResponse> getWeather(String city){
         final MutableLiveData<CurrentWeatherResponse> data = new MutableLiveData<>();
 
-        apiRequest.getCurrentWeather("","10.99","10.99","58ea430537a7db93beef322e4e2081aa").enqueue(new Callback<CurrentWeatherResponse>() {
+        apiRequest.getCityWeather(city,"58ea430537a7db93beef322e4e2081aa").enqueue(new Callback<CurrentWeatherResponse>() {
 
             @Override
             public void onResponse(Call<CurrentWeatherResponse> call, Response<CurrentWeatherResponse> response) {
 
                 if(response.isSuccessful() && response.body()!=null){
+                    data.setValue(null);
                     data.setValue(response.body());
                     System.out.print(data);
                 }
             }
-
-            @Override
+              @Override
             public void onFailure(Call<CurrentWeatherResponse> call, Throwable t) {
-            }
-        });
-        return data;
-    }
-    public MutableLiveData<MultipleDaysWeatherResponse> getMultipleDaysWeather(){
-        final MutableLiveData<MultipleDaysWeatherResponse> data = new MutableLiveData<>();
-        apiRequest.getMultipleDaysWeather("","metrics","EN",6,"58ea430537a7db93beef322e4e2081aa").enqueue(new Callback<MultipleDaysWeatherResponse>() {
-            @Override
-            public void onResponse(Call<MultipleDaysWeatherResponse> call, Response<MultipleDaysWeatherResponse> response) {
-                if(response.isSuccessful() && response.body()!=null){
-                    data.setValue(response.body());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<MultipleDaysWeatherResponse> call, Throwable t) {
-                System.out.print(t.getMessage());
             }
         });
         return data;

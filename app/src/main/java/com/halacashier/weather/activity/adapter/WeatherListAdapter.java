@@ -38,8 +38,9 @@ public class WeatherListAdapter extends RecyclerView.Adapter<WeatherListAdapter.
     @Override
     public void onBindViewHolder(@NonNull WeatherListAdapter.ViewHolder viewHolder, int i) {
         WeatherItem weatherItem = weatherItems.get(i);
-        viewHolder.tvWeatherTime.setText(weatherItem.getMain());
-        viewHolder.tvWeatherTemp.setText(weatherItem.getMain());
+        viewHolder.tvWeatherTime.setText("Now");
+        int weather = i+10;
+        viewHolder.tvWeatherTemp.setText(""+weather+"°");
         Glide.with(context)
                 .load(Constants.getImageUrl(weatherItem.getIcon()))
                 .into(viewHolder.ivWeatherIcon);

@@ -14,11 +14,12 @@ import dagger.hilt.android.lifecycle.HiltViewModel;
 public class MainVM extends ViewModel {
 
     MainRepo mainRepo;
-  public  MutableLiveData<CurrentWeatherResponse> data = new MutableLiveData<>();
+    public MutableLiveData<CurrentWeatherResponse> data;
 
     @Inject
     MainVM(MainRepo mainRepo) {
         this.mainRepo = mainRepo;
-        data =  mainRepo.getWeather();
+        data = mainRepo.getWeather();
+        mainRepo.getMultipleDaysWeather();
     }
 }

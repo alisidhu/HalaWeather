@@ -26,6 +26,12 @@ public interface ApiRequest {
             @Query("appid") String appId
     );
 
+    @GET("weather")
+    Call<CurrentWeatherResponse> getCityWeather(
+            @Query("q") String q,
+            @Query("appid") String appId
+    );
+
     /**
      * Get five days weather forecast.
      *

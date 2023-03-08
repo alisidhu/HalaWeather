@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">HalaWeather</string>
+    <string name="weather">Weather</string>
     <string name="weather_now">Now</string>
     <string name="weather_foreign_dummy">19°</string>
     <string name="hourly_forecast">Hourly Forecast</string>
+    <string name="search_city_or_airport"> Search for a city or airport</string>
     <string name="weekly_forecast">Weekly Forecast</string>
+    <string name="please_enter_city_name_to_check_weather">Please Enter city name to check Weather</string>
 </resources>
