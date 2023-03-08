@@ -19,7 +19,7 @@ public class MainRepo {
         this.apiRequest = RetrofitRequest.provideRetrofitInstance(RetrofitRequest.provideOkHttp());
     }
 
-    public void getWeather(){
+    public MutableLiveData<CurrentWeatherResponse> getWeather(){
         final MutableLiveData<CurrentWeatherResponse> data = new MutableLiveData<>();
 
         apiRequest.getCurrentWeather("","10.99","10.99","58ea430537a7db93beef322e4e2081aa").enqueue(new Callback<CurrentWeatherResponse>() {
@@ -35,9 +35,8 @@ public class MainRepo {
 
             @Override
             public void onFailure(Call<CurrentWeatherResponse> call, Throwable t) {
-                data.setValue(null);
-
             }
         });
+        return data;
     }
 }
